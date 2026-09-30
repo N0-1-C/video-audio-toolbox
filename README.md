@@ -2,8 +2,29 @@
 
 本地音视频处理工具，基于 FFmpeg + Python/tkinter。
 
+> **GitHub**：https://github.com/N0-1-C/video-audio-toolbox
+> **Gitee**（国内镜像）：https://gitee.com/cqhup/video-audio-toolbox
+
 **两种用法**：人用 GUI（`启动.bat`），AI agent / 脚本用 CLI（`avtool.py`）。
 两者共用同一套命令构造函数，行为一致。
+
+## 克隆与首次运行
+
+```bash
+git clone https://github.com/N0-1-C/video-audio-toolbox.git
+cd video-audio-toolbox
+python fetch_ffmpeg.py     # 仅首次：下载 ffmpeg 到 bin/（约 190MB）
+```
+
+国内建议用 Gitee 镜像克隆（代码部分快得多）：
+
+```bash
+git clone https://gitee.com/cqhup/video-audio-toolbox.git
+cd video-audio-toolbox
+python fetch_ffmpeg.py                          # 默认从 GitHub Release 下载
+python fetch_ffmpeg.py --source gyan            # GitHub 不通时换 gyan.dev 源
+python fetch_ffmpeg.py --proxy http://127.0.0.1:7890   # 或指定代理
+```
 
 ## 功能
 
