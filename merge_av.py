@@ -1995,8 +1995,14 @@ def main():
             print("自检未通过：存在必需组件缺失。")
             return 1
         if not rep["ffmpeg"]:
-            print("自检未通过：未找到 ffmpeg。请确认 bin/ 目录完整。")
+            print("自检未通过：未找到 ffmpeg。")
+            if rep.get("fetch_hint"):
+                print()
+                print(deps.FETCH_HINT)
             return 1
+        if not rep.get("bin_ready") and rep.get("fetch_hint"):
+            print("自检通过（用的是系统 ffmpeg，非内置）。")
+            return 0
         print("自检通过。")
         return 0
 

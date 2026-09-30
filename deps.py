@@ -302,8 +302,8 @@ def main():
             print(FETCH_HINT)
         return 1
     if not rep.get("bin_ready") and rep.get("fetch_hint"):
-        print("自检通过（用的是系统 ffmpeg）。")
-        print(rep["fetch_hint"])
+        # fetch_hint 已在上面「提示：」块里打印过，这里不再重复
+        print("自检通过（用的是系统 ffmpeg，非内置）。")
         return 0
     print("自检通过。")
     return 0

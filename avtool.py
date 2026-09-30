@@ -388,6 +388,8 @@ def act_capabilities(args):
         ffmpeg_origin=rep["ffmpeg_origin"],
         ffprobe=FFPROBE,
         ffprobe_origin=rep["ffprobe_origin"],
+        bin_ready=rep.get("bin_ready"),
+        fetch_hint=rep.get("fetch_hint"),
         nvenc=nvenc,
         encoder_count=len(encoders),
         actions=actions,
@@ -426,6 +428,8 @@ def act_capabilities(args):
             "默认不覆盖已有输出文件；需要覆盖请显式加 --overwrite。",
             "「仅换容器」前请先用 probe 看源编码，或直接跑 convert，兼容性不匹配会返回明确错误。",
             "无损压缩对已是有损编码的源通常不会变小，要瘦身请用高压缩比 preset。",
+            "bin_ready 为 false 表示 bin/ 里没有内置 ffmpeg（仓库不含，因单文件 160MB 超平台限制）；"
+            "此时用的是系统 ffmpeg。要恢复自带依赖，跑项目根目录的 fetch_ffmpeg.py。",
         ],
     )
 
