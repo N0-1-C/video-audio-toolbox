@@ -1,0 +1,20 @@
+# 统一换行符，避免 Windows/Linux 来回提交产生整文件 diff
+* text=auto eol=lf
+
+# Windows 批处理用 CRLF 更稳妥
+*.bat text eol=crlf
+
+# 源码与文档统一 LF
+*.py   text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+
+# 二进制（不该被当文本处理）
+*.exe  binary
+*.dll  binary
+*.zip  binary
+*.png  binary
+*.jpg  binary
+*.ico  binary

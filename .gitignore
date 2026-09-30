@@ -1,0 +1,43 @@
+# ============================================================
+#  内置二进制（体积大，超过 GitHub/Gitee 单文件 100MB 硬限制）
+#  克隆后跑一次 `python fetch_ffmpeg.py` 即可自动补齐
+# ============================================================
+bin/*
+!bin/.gitkeep
+bin_backup/
+
+# 便携版 Python（可选，体积大）
+python/
+
+# 第三方纯 Python 包（可选，按需放置）
+vendor/*
+!vendor/.gitkeep
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# 临时测试产物
+_t/
+_t*/
+_s/
+_s*/
+_*.py
+!__init__.py
+
+# 输出目录
+out/
+output/
+
+# 日志与系统文件
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
